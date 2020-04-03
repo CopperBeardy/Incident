@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IncidentReporter.Views.IncidentsPage"
+             Title="{Binding Title}">
+ <StackLayout >
+            <ListView x:Name="IncidentsListView"
+                      ItemsSource="{Binding Incidents}"
+                      VerticalOptions="FillAndExpand"
+                      HasUnevenRows="True"
+                      RefreshCommand="{Binding LoadIncidentsCommand}"
+                      IsPullToRefreshEnabled="True"
+                      IsEnabled="True"
+                      IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                      CachingStrategy="RecycleElement"
+                      ItemSelected="OnIncidentSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                        <Grid Margin="4,2,4,2" BackgroundColor="#141f30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                            <StackLayout Padding="5" BackgroundColor="#141f30">
+                                <Label Text="{Binding Heading}" 
+                                       LineBreakMode="NoWrap"
+                                       FontAttributes="Bold"
+                                       FontSize="Medium"
+                                       TextColor="RoyalBlue"/>
+                                <Label Text="{Binding Type}"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="12" />
+                            </StackLayout>
+                            <Label  Grid.Column="1" Margin="0,0,4,0"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="End"
+                                       Text="{Binding DateReported, StringFormat='{0:d/M/yyyy}' }"/>
+                        </Grid> 
+                           
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+   
+</ContentPage>

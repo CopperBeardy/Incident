@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.IncidentReporter" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="28" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<application android:label="IncidentReporter.Android">
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.IncidentReporter.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDFXZKb8PUzk3DbAoQwQKgMTPwam2_ZibA" />
+	</application>
+</manifest>

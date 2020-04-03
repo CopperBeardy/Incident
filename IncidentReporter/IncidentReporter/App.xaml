@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IncidentReporter.App" >
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#000</Color>
+            <Color x:Key="TextColor">#fff</Color>
+            <Color x:Key="BackgroundColor">#333</Color>
+            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="ButtonBackGround">#f0f4eb</Color>
+
+           
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+            </Style>
+            <Style TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+            </Style>
+
+            <Style TargetType="Picker">
+              
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+           
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+               
+            </Style>
+
+            <Style x:Key="TitleLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Margin" Value="0,10,0,0"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                
+            </Style>
+
+
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource TextColor}"/>
+                <Setter Property="BorderWidth" Value="1"></Setter>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="FontSize" Value="11"></Setter>
+            </Style>
+
+     
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

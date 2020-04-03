@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IncidentReporter.Views.NewIncidentPage"
+             BackgroundColor="{StaticResource Primary}"
+             Title="New Incident">
+    <ScrollView>
+        <Grid  Padding="15" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" 
+               Text="Heading:"
+               VerticalTextAlignment="Center" />
+
+            <Entry BackgroundColor="White" TextColor="Black" Grid.Row="0" Grid.Column="1" 
+               x:Name="TitleEntry" 
+               Text="{Binding Incident.Heading}" 
+               VerticalOptions="Center" TextChanged="TitleEntry_OnTextChanged"/>
+           
+
+            <Label Grid.Row="1" Grid.Column="0" 
+               Text="Incident Type:" 
+               VerticalTextAlignment="Center"/>
+
+            <Picker x:Name="TypePicker" Grid.Row="1" Grid.Column="1"
+                    BackgroundColor="White" TextColor="Black"
+                    Title="Choose a Incident Type" 
+                    SelectedItem="{Binding Incident.Type}"/>
+           
+
+            <Label Grid.Row="2" Grid.Column="0" 
+               Text="Incident location:"
+               VerticalTextAlignment="Center"/>
+
+            <Entry Grid.Row="2" Grid.Column="1" BackgroundColor="White" TextColor="Black"
+               x:Name="LocationEntry"
+               Text="{Binding Incident.Location}" 
+               VerticalOptions="Center"/>
+
+            <Label Grid.Row="3" Grid.Column="0" 
+               Text="Incident Details:"
+               VerticalTextAlignment="Center"/>
+
+
+            <Editor Grid.Row="3"  Grid.Column="1" MinimumHeightRequest="100" BackgroundColor="White" TextColor="Black"
+                x:Name="IncidentDescriptionEditor" 
+                Text="{Binding Incident.IncidentDescription}"
+                Margin="0" TextChanged="IncidentDescriptionEditor_OnTextChanged" />
+
+            <Label Grid.Row="4" Grid.Column="0" 
+               Text="Photo:"
+               VerticalTextAlignment="Center"/>
+
+            <StackLayout Grid.Row="4" Grid.Column="1" >
+                <Image x:Name="image" />
+                <Button x:Name="TakePhoto"  Text="Add Photo" Clicked="TakePhoto_OnClicked"  />
+            </StackLayout>
+            <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                <Button x:Name="Cancel"
+                        Text="Cancel" 
+                        Clicked="Cancel_OnClicked">
+                </Button>
+                <Button x:Name="ReportIncident"
+                        Text="Report" 
+                        Clicked="ReportIncident_OnClicked"
+                        IsVisible="false">
+                </Button>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
+
+

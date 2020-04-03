@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IncidentReporter.Views.HomePage" 
+             BackgroundColor="{StaticResource Primary}"
+             Title="Incident Reporter">
+
+    <StackLayout >
+     
+
+     <Grid BackgroundColor="{StaticResource Primary}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
+                Text="New Incident" 
+                Margin="0,10,0,5"
+                HorizontalTextAlignment="Center" />
+
+        <Image Grid.Row="1" Grid.Column="0"
+               Source="ReportEditor.png"/>
+
+        <StackLayout Grid.Row="1" Grid.Column="1" 
+                     VerticalOptions="Center">
+            <Label Text="Create New Report" 
+                   TextColor="RoyalBlue"/>
+            <Label Text="Create and submit a new incident report" 
+                   FontSize="10" 
+                   TextColor="Azure"/>
+        </StackLayout>
+
+        <Button x:Name="CreateNewIncidentReportBtn" Grid.Row="1" Grid.Column="2" 
+                Text="Create"
+                Clicked="CreateNewIncidentReportBtn_OnClicked" />
+
+        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" 
+               Text="Reported Incidents" 
+               Margin="0,10,0,5" 
+               HorizontalTextAlignment="Center" />
+
+       <Image Grid.Row="3" Grid.Column="0" 
+              Source="ListBox.png" />
+
+        <StackLayout Grid.Row="3" Grid.Column="1" 
+                     VerticalOptions="Center">
+            <Label Text="List of Incidents" 
+                   TextColor="RoyalBlue" />
+            <Label Text="View a list of all reported incidents"
+                   FontSize="10"  
+                   TextColor="Azure"/>
+        </StackLayout>
+
+        <Button x:Name="ListOfIncidentsBtn" Grid.Row="3" Grid.Column="2" 
+                Text="View"
+                Clicked="ListOfIncidentsBtn_OnClicked"/>
+
+        <Image Grid.Row="4" Grid.Column="0" 
+               Source="MapLocation.png"/>
+
+        <StackLayout Grid.Row="4" Grid.Column="1" 
+                     VerticalOptions="Center">
+            <Label Text="Map of Incidents"
+                   TextColor="RoyalBlue"/>
+            <Label Text="Map showing reported incidents" 
+                   FontSize="10" 
+                   TextColor="Azure"/>
+        </StackLayout>
+
+        <Button x:Name="MapOfIncidentsBtn" Grid.Row="4" Grid.Column="2"
+                Text="View"
+                Clicked="MapOfIncidentsBtn_OnClicked"/>
+
+     
+
+
+
+  
+    </Grid>
+<Label x:Name="NotificationLabel" 
+       TextColor="Green"
+       HorizontalTextAlignment="Center"
+       IsVisible="False"
+       HorizontalOptions="Center"/>
+        </StackLayout>
+</ContentPage>
